@@ -7,5 +7,6 @@
   "author": {
     "name": "TeenyLabs"
   },
-  "keywords": ["meetings", "meeting-prep", "briefing", "calendar", "research", "productivity"]
+  "keywords": ["meetings", "meeting-prep", "briefing", "calendar", "research", "productivity"],
+  "repository": "https://github.com/teenylabs/meeting-prep"
 }
