@@ -19,8 +19,8 @@ Exact values for the recommended stack: **Google Calendar + Gmail + Slack + Noti
 
 ## Notes output (Notion)
 
-- Parent for every brief: `{"type":"page_id","page_id":"<NOTES_HOME_PAGE_ID>"}` — from the profile's `brief_home`. (The original author's page was under a "Meeting Notes" page; each owner sets their own.)
-- Title `Prep — <Person> (<Company>) — <Mon D, YYYY>`, icon 📝.
+- Parent for every brief: `{"type":"page_id","page_id":"<NOTES_HOME_PAGE_ID>"}`, from the profile's `brief_home`. (The original author's page was under a "Meeting Notes" page; each owner sets their own.)
+- Title `Prep: <Person> (<Company>), <Mon D, YYYY>`, icon 📝.
 - Content = Notion-flavored Markdown; if unsure of syntax, fetch `notion://docs/enhanced-markdown-spec` first. H2 headers, short bullets, inline `[text](URL)` links, callouts.
 - Returned brief URL form: `https://www.notion.so/<id>`.
 - Part C refresh: `notion-update-page` with `command="insert_content"` at `position {"type":"start"}` adding the `## What's new (as of <date>)` section.
@@ -31,15 +31,15 @@ Exact values for the recommended stack: **Google Calendar + Gmail + Slack + Noti
 
 ## Chat (Slack)
 
-- `slack_search_users` by name/email to resolve handle/ID (especially members of shared workspaces). Then `slack_search_public_and_private` restricted to DMs with that user. READ-ONLY — never post, react, schedule, or create canvases.
+- `slack_search_users` by name/email to resolve handle/ID (especially members of shared workspaces). Then `slack_search_public_and_private` restricted to DMs with that user. READ-ONLY: never post, react, schedule, or create canvases.
 
 ## Files fallback (Google Drive)
 
-- `create_file` with `contentMimeType="text/plain"` (Drive auto-converts to a native Google Doc) in folder `parentId="<FALLBACK_FOLDER_ID>"` (from the profile's `fallback_home`), title `Prep — <Person> (<Company>) — <date>`. ALL-CAPS headers, blank lines, "• " bullets, plain URLs in a LINKS section.
+- `create_file` with `contentMimeType="text/plain"` (Drive auto-converts to a native Google Doc) in folder `parentId="<FALLBACK_FOLDER_ID>"` (from the profile's `fallback_home`), title `Prep: <Person> (<Company>), <date>`. ALL-CAPS headers, blank lines, "• " bullets, plain URLs in a LINKS section.
 
 ## Prep event description (HTML)
 
-- Line 1: `<b>📝 Full brief (Notion — rich text, reflows):</b> <a href="<notion url>">Open the brief</a>` (or `📄 Full brief (Google Doc…)` for the fallback).
+- Line 1: `<b>📝 Full brief (Notion, rich text, reflows):</b> <a href="<notion url>">Open the brief</a>` (or `📄 Full brief (Google Doc…)` for the fallback).
 - Tight at-a-glance block: who they are; `<b>Why this meeting</b>` if Slack gave a topic; 1–2 connection points; 3–5 questions to ask.
 - `<b>Key links:</b>` with 2–4 clickable `<a>` source links.
 - Literal marker line: `AUTOPREP|source=<SOURCE_MEETING_ID>|v=1`
