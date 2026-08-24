@@ -1,0 +1,80 @@
+---
+name: meeting-prep-setup
+description: One-time (or re-run) setup for the meeting-prep routine. Builds the user's meeting-prep profile — name, account, timezone, a short background, current focus, where briefs are saved, and which tools they use — mostly by auto-deriving it from their own activity, and saves it so future prep runs are tailored to them. Use when the user says "set up meeting prep", "configure meeting prep", "personalize my meeting prep", or runs meeting prep for the first time with no profile saved.
+---
+
+# Meeting Prep — Setup
+
+Build or update the owner's meeting-prep profile. Every brief the routine writes is tailored to this profile, so gather it carefully, then save it where the routine can read it each run.
+
+## How to run setup — lead, don't interrogate
+
+Setup should feel like a short, friendly walkthrough, and it should figure out most things for the owner rather than quizzing them.
+
+1. **Open by explaining what Meeting Prep is**, in one or two plain sentences: what it does ("finds your upcoming meetings with people you haven't met, researches each person, and puts a private prep event on your calendar — a quick summary right in the event, plus a link to a longer, detailed brief"), and what it needs ("just a calendar to start — anything else you've connected, like email, chat, meeting notes, or a CRM, makes the briefings richer, and connecting a notes app like Notion or Google Docs lets me save a longer, full brief there; none of it is required"). Frame connectors inclusively as "whatever you use," not one or two named products.
+2. **Immediately do the auto-derive and LEAD with "Here's what I know about you."** Do not ask the owner to describe themselves first — build the draft from their own activity (see below) and present it for confirmation. This is the moment that makes the tool feel personal, so always do it when a calendar (and ideally more) is connected. Kick this off automatically; don't wait to be asked.
+3. **Only a calendar is required.** Do NOT require, block on, or nag about Gmail/email or any other source. If email/chat/notes aren't connected, say once — lightly — that connecting them would make briefs richer, and continue.
+4. Confirm/prune the `focus` threads. **Tell the owner where things will be saved, as a clear choice — never silently pick a destination.** State where the full briefs will go — e.g. "I'll save each brief as a page in Notion under a 'Meeting Notes' page," or, with no notes app, "the full brief will go right in the calendar event / a linked page" — and let them confirm or choose somewhere else (a different notes app, a specific page or folder, or just the calendar event). Also tell them where you're saving their profile. Then save the profile.
+5. Offer to run a first meeting-prep now, and to schedule it to run automatically.
+
+## What to collect
+
+- **name** — the owner's full name.
+- **account** — the single email/calendar account the routine should manage.
+- **timezone** — e.g. `America/Los_Angeles`.
+- **about** — 2–5 sentences: the owner's background, what they're doing now, the kinds of meetings they take (customer discovery, hiring, networking, job search, investor/peer chats, etc.), and what they want out of each. THIS is the field that tailors all research and talking points, so make it rich and specific. Prefer to auto-derive a first draft from the owner's activity across their connected sources (see "Auto-derive from activity" below) rather than making them write it from scratch — then confirm.
+- **focus** — the owner's current priorities and any active, multi-step processes the routine should watch for and emphasize (e.g. a job search / interview loops, an active sales pipeline, a fundraise, a hiring loop they're running, key partnerships). This decides which meeting-type playbooks get prioritized. Job searching is only ONE possibility — do not assume it; capture whatever the owner is actually doing, or leave light if they just want general prep.
+- **brief_home** — where briefs should be saved: the notes-app page or database that new briefs nest under. **Propose a destination and have the owner confirm it — don't just auto-pick whatever notes app is connected.** Offer to use or create a "Meeting Notes"-style page, or point it at a page they name; if they'd rather not use a notes app at all, briefs go in the calendar event / a linked page instead. For the default stack, capture the underlying page/database id once they've confirmed.
+- **fallback_home** — optional backup destination (a folder in the files app) if the notes app is unavailable. For the default stack, capture the folder id.
+- **connectors** — which tool the owner uses in each category: calendar (the only required one), email, chat, notes, files. Note any category they don't have — the routine simply skips that context source; never treat a missing non-calendar source as a blocker. If there's no notes app, the routine will put briefs directly in the calendar prep event. ALSO capture any *other* sources they've connected that could hold context on people or meetings — a meeting-notes/transcript tool (e.g. Granola), a CRM, extra document stores, task/project trackers — and list them so the routine mines those too. Prompt for these explicitly; people forget to mention the extra sources that make briefs richer.
+
+## Auto-derive from activity (do this first)
+
+Before asking the owner to describe themselves, build a draft profile from their own activity across every connected source. This is the preferred path — most people would rather correct a draft than write a bio. **Look back ~90–120 days across every source (not just the last few weeks)** — job searches, cofounder searches, and fundraises move slowly and a short window misses them. Read broadly but read-only, and derive:
+
+- **From `~~calendar` (last ~90–120 days + upcoming):** recurring meeting titles and attendees, external vs. internal ratio, companies/domains they meet with, and patterns that reveal meeting types (many new external 1:1s → networking/discovery or a job search; "interview"/panel holds → an active loop; investor names → fundraising; candidate screens → hiring). Seeds `focus`.
+- **From `~~email` — SEARCH the inbox, don't just read the signature:** run targeted searches for career/venture signals — recruiter and interview threads, application/ATS and "recruiting feedback" mail, co-founder-matching (e.g. YC), job newsletters they subscribe to, and "checking in / reconnecting" notes they send. These reveal an active job search, a raise, or company-building that a signature never will. Also capture their signature (title, company, links) and what they write about.
+- **From `~~chat` — search their DMs and their own posts, not just which workspaces they're in:** what they say they're working on (SPC/community "monthly update"-style posts are gold), plus DMs about finding a co-founder, a role, customers, or funding.
+- **From transcripts / CRM / any other connected source, if present:** meeting-notes tools (e.g. Granola) for what they've discussed wanting next — **LIST their recent meetings and read the summaries.** Do NOT trust a natural-language "no meetings found" as proof a source is empty — it can be a false negative; cross-check with a structured list before concluding anything. A CRM for their role relative to deals/contacts. Only call a source empty once a direct listing confirms it.
+- **From the web — do this, don't skip it:** their LinkedIn, company/personal site, talks, and press — to fill in background, confirm identity, and catch a current title or venture that isn't in their own data yet.
+
+Explicitly hunt for and name EVERY distinct thread of what they're doing — someone can be job-searching AND exploring co-founders AND advising all at once. Capture the full set in `focus`; do not collapse it to a single story.
+
+Synthesize these into a proposed `about` (2–5 sentences) and a best-guess `focus`, plus draft values for the other fields. NEVER fabricate — if a source is missing or a detail is uncertain, mark it and ask. **Weight recency:** recent activity defines what the owner is doing NOW; describe older threads in the past tense and date them; never present a months-stale project, role, or relationship as current — if you can't tell whether something is ongoing, ask rather than assert. Present the draft and let the owner edit or replace it.
+
+## Interview approach
+
+Lead with the auto-derived draft above, then confirm and fill gaps:
+
+- Show the proposed `about` and `focus` and ask the owner to correct them. If no sources are connected yet (or they decline the research), fall back to asking "tell me about yourself and the meetings you take" as an open prompt.
+- **List each active-looking `focus` thread as its OWN item and ask the owner to confirm or prune each one.** A project, collaboration, or search that ended recently (days or a couple of weeks ago) looks identical in the data to one that's still going — the "stop" is just an absence of new meetings, which recency weighting cannot catch. Only the owner knows. So present each thread with an explicit "still active?" rather than asserting it, and drop or past-tense the ones they say have wound down.
+- Use AskUserQuestion for the structured choices (timezone, which connectors they use, where briefs should be saved).
+- Keep it to a few rounds — don't overwhelm.
+
+Do NOT ask the owner about brief formatting — text size, how much detail, skim vs. deep, layout preferences. The brief format is a fixed, opinionated house style (scannable, front-loaded, mobile-friendly, and legible at large text) built to be good for everyone by default. Setup is about who the owner is and where things go, not how briefs look.
+
+## Show which sources you used
+
+When you present the draft, tell the owner plainly **which connected sources you searched and what each one contributed** — e.g. "Calendar + Granola showed you're building an evals project; Gmail and Slack showed an active job search and a cofounder search; the web filled in your background." Also name any source that was connected but **empty, blocked, or thin**, so the owner knows the gap and can fix it (reconnect, sync, grant access) — and never conclude a source is empty from a failed natural-language query alone. This transparency is part of the deliverable, not a footnote.
+
+## Save the profile
+
+Persist the profile so the meeting-prep routine can load it on every run:
+
+1. **Preferred:** if memory tools are available, write it to a memory file such as `/meeting-prep-profile.md` (simple `key: value` lines, with `about` as a short paragraph).
+2. **Else, if a notes app is connected:** create or update a page titled **"Meeting Prep — Profile"** in the owner's notes app (under `brief_home`), holding the same fields.
+3. **Else (calendar-only — no memory, no notes app):** store the profile in the calendar itself. Create or update a **private, ALL-DAY** calendar event titled **"Meeting Prep — Profile"** whose description holds the same `key: value` fields plus a marker line `MEETING_PREP_PROFILE|v=1`. Make it all-day, private, no attendees, notifications off. Because it's all-day and carries that marker, the routine's own discovery never treats it as a meeting to prep. This guarantees that EVERY user — down to calendar-only — can persist and reload their profile. (To update later, find it by searching the calendar for the `MEETING_PREP_PROFILE` marker and update that event's description.)
+
+Since a calendar is always present, one of these always works. Confirm what you saved and where, and tell the owner they can re-run setup anytime to change it.
+
+## Then — run it, and offer to put it on autopilot
+
+1. Offer to run the **meeting-prep** routine right now so the owner sees it work.
+2. **Turn on the schedule — this is the whole point, not an afterthought.** The best thing about Meeting Prep is that it runs invisibly in the background, so prep is always waiting without the owner ever asking. A setup that ends without a schedule turned on hasn't really delivered the product. Recommend turning it on, but make it an explicit, changeable choice — never create a schedule silently, and never offer it vaguely ("want me to schedule it?") without naming the concrete plan:
+   - **State the exact proposed schedule in plain words**, including the times and timezone. Recommended default: **twice each weekday — around 7:00 AM** (prep ready before your day starts) **and around 4:00 PM** (catches meetings booked during the day and gets a head start on tomorrow). E.g. "I'll run it at **7:00 AM and 4:00 PM on weekdays, Pacific time**." (A single morning run misses anything booked later that same day, which is why twice is the default.)
+   - **Explicitly offer to change it** — ask whether they'd like a different time or frequency (some want a few times a day, some only certain days). Wait for their answer.
+   - **Only then create it** with the session's scheduled-task / recurring-task tool (the Cowork scheduled-task tool; load via ToolSearch if needed), using the prompt **"Run my meeting prep."** **Timezone matters — this is a common failure point, so be careful:** the chosen times are in the owner's LOCAL timezone, but the underlying cron is UTC. Convert each local time to UTC (local + the owner's UTC offset; shift the day if it crosses midnight) — e.g. 7:00 AM Pacific in summer (UTC-7) → 14:00 UTC, and 4:00 PM Pacific → 23:00 UTC. Create EXACTLY the agreed times and no more — do not invent or duplicate a run. After creating, **read the schedule back and confirm that every fire time, translated to the owner's local zone, matches the proposal exactly — both the clock times AND how many there are.** If anything is off (wrong time, or an extra/missing run), delete it and recreate it correctly. Always describe the schedule to the owner in their LOCAL time, and never announce a "first run" time that contradicts the schedule you set.
+   - **Confirm exactly what you scheduled** — e.g. "Done — it runs at 7:00 AM and 4:00 PM every weekday, Pacific; you can change the times or turn it off anytime."
+   - **Flag permissions so the scheduled run doesn't stall.** An unattended run needs the tools it uses — **especially web search, plus the calendar and any connectors** — allowed to run WITHOUT prompting; otherwise a scheduled run can hang waiting for an approval no one is there to give (web research is the usual culprit). Tell the owner to set those tools to "always allow" / auto-approve for this task, and be clear that this is a permission only they can grant — the plugin can't flip it on for them. If a run ever seems to do nothing, an unapproved tool prompt is the first thing to check.
+
+This is how it "runs on a schedule for them": the schedule lives in the owner's own account (a plugin can't ship one), so setup is what switches it on — one confirmation instead of the owner building a task by hand, and from then on it's invisible and automatic.
