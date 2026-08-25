@@ -1,6 +1,6 @@
 {
   "name": "meeting-prep",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "To start: connect your calendar and say 'set up meeting prep', and it learns what you're working on from your own activity. Then say 'prep my meetings' anytime, or put it on a schedule. It researches every upcoming meeting with someone new (who they are, why you're meeting, what to ask) and leaves a private prep note on your calendar so you're never walking in cold. Keeps itself up to date; never touches your real meetings.",
   "hooks": "./hooks/hooks.json",
   "license": "MIT",
