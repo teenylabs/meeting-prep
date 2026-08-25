@@ -6,7 +6,7 @@ Golden rule: whatever the owner has connected, use it for **read** context; the 
 
 ## Calendar (the one required category)
 - **Google Calendar** → see `default-stack.md`.
-- **Outlook / Microsoft 365 Calendar** → discover its list-events and create-event tools. Create the prep event as: **private**, reminders/notifications **off**, a distinct **category or color** so it stands out, **no attendees**, with start/end/timezone matching the source exactly. Put the same literal marker `AUTOPREP|source=<SOURCE_ID>|v=1` in the body, and find existing prep events by searching for that marker.
+- **Outlook / Microsoft 365 Calendar** → discover its list-events and create-event tools. Create the prep event as: **private**, reminders **explicitly overridden to none** (set an empty reminder set rather than leaving reminders unset, otherwise the event inherits the calendar's default alert) and attendee notifications **off**, a distinct **category or color** so it stands out, **no attendees**, with start/end/timezone matching the source exactly. Put the same literal marker `AUTOPREP|source=<SOURCE_ID>|v=1` in the body, and find existing prep events by searching for that marker.
 
 ## Email (optional)
 - **Gmail** → `search_threads` (see `default-stack.md`).

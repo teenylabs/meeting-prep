@@ -58,7 +58,7 @@ Every new meeting produces a private **prep event on the calendar** (always, the
 - You may ONLY: create new briefs and new prep events; change the TIME of prep events you manage; and update the DESCRIPTION/CONTENT of briefs + prep events you manage. A prep event = summary starts with `Prep:` AND description contains `AUTOPREP|source=`.
 - NEVER edit, move, reschedule, change attendees on, or delete ANY real meeting or anything with other attendees. Treat every real meeting as read-only, INCLUDING the owner's own self-created holds. You may create a SEPARATE prep event pointing at a hold via `AUTOPREP|source=<hold id>`, but never modify the hold itself.
 - `~~chat` is READ-ONLY. Never send, schedule, react, post, or create anything there.
-- Prep events: NO attendees, private visibility, notifications off, and a distinct color so they're easy to spot.
+- Prep events: NO attendees, private visibility, **no reminders at all** (no popup, no email; explicitly override the calendar's default reminders with an empty set rather than leaving them unset), and a distinct color so they're easy to spot. Prep events must never alert the owner. The routine is meant to be invisible: the brief is simply there on the calendar when they go looking for it. The only thing that should ever interrupt the owner is a tool-permission prompt, which the plugin does not control.
 
 ## Part A: discover, gather context, research, create brief + prep event
 
@@ -97,7 +97,7 @@ Every new meeting produces a private **prep event on the calendar** (always, the
    STRUCTURE: the brief ALWAYS opens with the one-line identity header (name, current role, company, one-sentence who-they-are). Immediately after it comes `## Why this meeting` (quote/paraphrase the `~~chat` or email context if there is one), the highest-leverage section, then the person research and the company/meeting-type sections. Never bury who the person is below meeting context or updates. If this is a 2nd+ meeting at a company already covered (check existing briefs, or `~~email`/`~~chat` for an earlier meeting), make it PERSON-ONLY: skip the company deep-dive.
 
 5. Write the brief: to the notes app under `brief_home` if one is connected; else publish it as a private Claude artifact and keep its link (if artifact publishing is available); else the full brief goes in the prep event description in the next step. If any of these fails, do NOT abort; fall back to the event description and carry on.
-6. **Create the prep event: this is the REQUIRED deliverable. Always create it, even if research was thin or no notes app was available.** Call the calendar's create-event tool with: summary `Prep: <source meeting title>`; start/end/timezone EXACTLY matching the source; private; notifications off; distinct color; no attendees. Description:
+6. **Create the prep event: this is the REQUIRED deliverable. Always create it, even if research was thin or no notes app was available.** Call the calendar's create-event tool with: summary `Prep: <source meeting title>`; start/end/timezone EXACTLY matching the source; private; **reminders explicitly overridden to none** (an empty reminder set, so the event does not inherit the calendar's default popup); no attendee-notification emails; distinct color; no attendees. Description:
    - Line 1: if the brief has its own home (a notes-app page or a Claude artifact), a bold "Full brief" label with a clickable link to it; if it has no home of its own, put the full brief text here in the description.
    - Tight at-a-glance block: who they are; "Why this meeting" if `~~chat` gave a topic; 1–2 connection points; 3–5 questions to ask.
    - A bold "Key links:" line with 2–4 clickable source links.
@@ -107,7 +107,7 @@ Every new meeting produces a private **prep event on the calendar** (always, the
 
 ## Part B: sync prep events to source times
 
-For each prep event (found via the `AUTOPREP` marker, including any just created): parse the source id and fetch the source. If the source is missing/cancelled, leave the prep unchanged and note it. Else if start/end differ, update ONLY the prep event to match exactly (notifications off). Never touch the source.
+For each prep event (found via the `AUTOPREP` marker, including any just created): parse the source id and fetch the source. If the source is missing/cancelled, leave the prep unchanged and note it. Else if start/end differ, update ONLY the prep event to match exactly, again passing the empty reminder override and suppressing attendee-notification emails, since an update can otherwise re-apply the calendar's default reminders. Never touch the source.
 
 ## Part C: refresh imminent briefs
 

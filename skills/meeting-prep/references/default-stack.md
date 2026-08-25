@@ -14,7 +14,8 @@ Exact values for the recommended stack: **Google Calendar + Gmail + Slack + Noti
 ## Calendar (Google Calendar)
 
 - Discover: `list_events` on the primary calendar, now → 14 days, `orderBy` startTime, `pageSize` 100. Find already-handled sources with `list_events` `fullText="AUTOPREP"`.
-- Prep event fields: `colorId` "8" (graphite), `visibility` "private", `notificationLevel` NONE, no attendees, `summary` "Prep: <source title>". `startTime`/`endTime`/`timeZone` exactly match the source.
+- Prep event fields: `colorId` "8" (graphite), `visibility` "private", **`overrideReminders` set to an EMPTY array `[]`**, `notificationLevel` NONE, no attendees, `summary` "Prep: <source title>". `startTime`/`endTime`/`timeZone` exactly match the source.
+- **`overrideReminders: []` is what actually silences the event, and it is required on every create AND every update.** These are two different settings and only one of them stops a popup: `notificationLevel` controls *emails to attendees* about the event (irrelevant here, since prep events have no attendees), while `overrideReminders` controls the *reminder alert that fires before the event*. Omitting `overrideReminders` does NOT mean "no reminder"; it means the event inherits the calendar's DEFAULT reminders, which for most people is a popup 10 minutes before. That popup is exactly what makes the routine feel intrusive instead of invisible. Pass the empty array explicitly every time.
 - Part B: `get_event(source)`; if start/end differ, `update_event` on the PREP event only.
 
 ## Notes output (Notion)
