@@ -1,12 +1,12 @@
 {
   "name": "meeting-prep",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "description": "Researches the people in your upcoming meetings and leaves a private prep note on your calendar: who they are, why you're meeting, and what to ask. To start, connect your calendar and say 'set up meeting prep'.",
   "hooks": "./hooks/hooks.json",
   "license": "MIT",
+  "repository": "https://github.com/teenylabs/meeting-prep",
   "author": {
     "name": "TeenyLabs"
   },
-  "keywords": ["meetings", "meeting-prep", "briefing", "calendar", "research", "productivity"],
-  "repository": "https://github.com/teenylabs/meeting-prep"
+  "keywords": ["meetings", "meeting-prep", "briefing", "calendar", "research", "productivity"]
 }
