@@ -30,7 +30,7 @@ Wherever is easiest for you. If you've connected a notes app (Notion, Google Doc
 
 ## Running unattended (scheduled)
 
-For the scheduled run to work while you're away, the tools it uses need to be allowed to run **without asking**, especially **web search** (for research), plus your calendar and connectors. If those still prompt for approval, a 7 AM run will just sit there waiting and appear to "do nothing." Set them to always-allow / auto-approve for the task when you turn on the schedule. (This is a permission you grant; a plugin can't enable it for you.)
+For the scheduled run to work while you're away, the task needs to run its tools **without stopping to ask**, especially **web search and web fetch** (for research), plus your calendar and connectors. The setting that controls this is the **task's approval mode**: a task left on **Manually approve** will prompt you for every new website it tries to read and just sit there waiting on an unattended run, appearing to "do nothing." Set the meeting-prep task to **Automatically approve** (Claude still safety-reviews each step, it just doesn't stop for every site). Clicking "Allow all for this website" on each prompt won't fix it, since research visits new sites every run. This is a setting you control on your own task; a plugin can't enable it for you.
 
 The recurring schedule itself is a Claude Cowork feature (Cowork's scheduled tasks), so turning on autopilot happens in Cowork. Once it's on, the task runs in the cloud on its schedule using your connected accounts; it does not need your computer awake or the desktop app open. Running it on demand ("prep my meetings") works in any Claude interface that has your calendar connected.
 
