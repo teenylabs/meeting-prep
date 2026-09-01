@@ -105,12 +105,7 @@ Every new meeting produces a private **prep event on the calendar** (always, the
 
    Add or adapt playbooks as the owner's contexts require: the point is to match the meeting, not to force a fixed list.
 
-   LOGISTICS: **read the meeting's format, location, join link, and the owner's RSVP status OFF the calendar event and the email/chat. Never infer or invent them.**
-   - **If the event has a video link (Google Meet, Zoom, Teams), it is a VIDEO CALL.** Say so, and include the join link. Do not describe it as in-person.
-   - **A booked room, or a room/resource attendee, is usually the OTHER person's location** (e.g. a "Phone Room" they are taking the call from), not somewhere the owner travels to. NEVER tell the owner to "go to the office" or to "plan for lobby/badge time" unless ALL THREE hold: the event has a real physical location, there is NO video link, and the email/chat confirms meeting in person.
-   - **State RSVP only from the owner's OWN `responseStatus`** on the event (accepted / declined / needsAction). Never claim the owner has not RSVP'd when they have accepted.
-   - **Defer to what the email or chat explicitly says.** If the thread says "call", "chat", or "meet in person", that wins over your own reading of the event.
-   - If a logistic is genuinely unknown, leave it out. An omitted detail is fine; a confidently wrong one sends the owner to the wrong place at the wrong time.
+   NO MEETING LOGISTICS: do not include where or how the meeting happens (video vs in person, room or building, join link, travel, lobby or badge, or RSVP status). That is noise, and it is error-prone to get right. This brief is content to prep: who the person is, why you are meeting, and what to discuss. (Event times are synced separately on the prep event in Part B; you never narrate location or format.)
 
    STRUCTURE: the brief ALWAYS opens with the one-line identity header (name, current role, company, one-sentence who-they-are). Immediately after it comes `## Why this meeting` (quote/paraphrase the `~~chat` or email context if there is one), the highest-leverage section, then the person research and the company/meeting-type sections. Never bury who the person is below meeting context or updates. If this is a 2nd+ meeting at a company already covered (check existing briefs, or `~~email`/`~~chat` for an earlier meeting), make it PERSON-ONLY: skip the company deep-dive.
 
