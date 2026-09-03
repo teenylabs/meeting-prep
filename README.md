@@ -24,6 +24,26 @@ That's it. From then on, your prep is just… there, waiting on your calendar.
 
 It only ever creates and maintains its *own* private prep notes. It never edits, moves, or deletes your real meetings, and it only ever reads your chat.
 
+## What it preps, and what it skips
+
+It's selective on purpose, so it stays useful and stays quiet:
+
+**Preps:**
+
+- **New people** you haven't met: 1:1s and small meetings with at least one outside guest.
+- **Holds you booked yourself** that name a person or company (like "Mariya coffee"), even with no invitee added.
+- **One-off curated gatherings** with a real guest list (a dinner, salon, or roundtable): prepped as a who's-who of the room, not a deep dive on everyone.
+- **Meetings inside an active process you're in** (an interview loop, a live deal, a fundraise, a hiring loop you're running), including recruiter and coordinator syncs.
+
+**Skips:**
+
+- **Recurring and standing meetings**: weekly forums, team syncs, lunches, all-hands, standing 1:1s. If it repeats, it's skipped, even if it lists guests.
+- **People you already know** or have real back-and-forth with (routine scheduling email doesn't count as knowing them).
+- **Internal-only meetings, all-day events, declined invites, and generic holds** that name no one.
+- **Personal recurring events** like workouts, appointments, and birthdays.
+
+You can always override on the spot, e.g. "prep my 3pm even though it's a recurring one," or "skip anything internal today."
+
 ## Where the full brief lives
 
 Wherever is easiest for you. If you've connected a notes app (Notion, Google Docs), briefs go there in one browsable place. If not, Meeting Prep can save each brief as its own private page (a Claude artifact) and link it, or just put the whole brief right in the calendar event. Either way, the highlights are always in the event itself, so there's nothing extra to open on the run.
