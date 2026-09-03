@@ -1,6 +1,6 @@
 {
   "name": "meeting-prep",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "Researches the people in your upcoming meetings and leaves a private prep note on your calendar: who they are, why you're meeting, and what to ask. To start, connect your calendar and say 'set up meeting prep'.",
   "hooks": "./hooks/hooks.json",
   "license": "MIT",
