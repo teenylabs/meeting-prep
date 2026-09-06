@@ -9,6 +9,7 @@ Exact values for the recommended stack: **Google Calendar + Gmail + Slack + Noti
 - Slack: `slack_search_users`, `slack_search_public_and_private`, `slack_read_thread`, `slack_read_user_profile` (READ-ONLY)
 - Notion: `notion-search`, `notion-fetch`, `notion-create-pages`, `notion-update-page`
 - Google Drive (fallback): `create_file`, `get_file_metadata`, `list_recent_files`
+- Granola (OPTIONAL transcript source, only if the owner has it connected; not part of the default stack): `list_meetings`, `get_meetings`, `query_granola_meetings`, `get_meeting_transcript`
 - Web search
 
 ## Calendar (Google Calendar)
@@ -33,6 +34,10 @@ Exact values for the recommended stack: **Google Calendar + Gmail + Slack + Noti
 ## Chat (Slack)
 
 - `slack_search_users` by name/email to resolve handle/ID (especially members of shared workspaces). Then `slack_search_public_and_private` restricted to DMs with that user. READ-ONLY: never post, react, schedule, or create canvases.
+
+## Transcripts (Granola, optional)
+
+Only if connected; skip silently otherwise. Granola is a very common add-on for this plugin's likely users, so mine it when present. LIST recent meetings (`list_meetings` / `get_meetings` / `query_granola_meetings`) and read summaries or `get_meeting_transcript` for prior conversations with or about the person, and for what the owner has said they want next (this feeds both the prior-contact judgment and `about`/`focus` in setup). Do NOT trust a natural-language "no meetings found" as proof it is empty; confirm with a direct structured listing. READ-ONLY.
 
 ## Files fallback (Google Drive)
 
