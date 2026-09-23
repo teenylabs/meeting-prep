@@ -4,6 +4,17 @@
 
 **To start:** connect your calendar and say *"set up meeting prep."* After that, run it anytime with *"prep my meetings"*, or set it on a schedule so your prep is always waiting for you.
 
+## Install
+
+In Claude Cowork or Claude Code, run:
+
+```
+/plugin marketplace add teenylabs/meeting-prep
+/plugin install meeting-prep@teenylabs
+```
+
+Then follow the steps below.
+
 ## Getting started (about 2 minutes)
 
 1. **Install the plugin.**

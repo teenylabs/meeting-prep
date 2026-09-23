@@ -1,0 +1,13 @@
+{
+  "name": "teenylabs",
+  "owner": {
+    "name": "TeenyLabs"
+  },
+  "plugins": [
+    {
+      "name": "meeting-prep",
+      "source": "./",
+      "description": "Researches the people in your upcoming meetings and leaves a private prep note on your calendar: who they are, why you're meeting, and what to ask. To start, connect your calendar and say 'set up meeting prep'."
+    }
+  ]
+}
