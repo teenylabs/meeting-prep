@@ -6,7 +6,14 @@
 
 ## Install
 
-In Claude Cowork or Claude Code, run:
+**In the Claude app (Cowork or Claude):**
+
+1. Open **Customize** in the left sidebar, then the **Plugins** tab. (In Cowork, open the Cowork tab first.)
+2. Click **+ Add**, then **Add marketplace**, then **Add from a repository**.
+3. Paste this repository: `https://github.com/teenylabs/meeting-prep`
+4. Open the **Discover** tab, find **Meeting Prep**, and click **Install**.
+
+**In Claude Code (terminal):**
 
 ```
 /plugin marketplace add teenylabs/meeting-prep
